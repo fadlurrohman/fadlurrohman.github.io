@@ -1,0 +1,156 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Publications</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+			<header id="header">
+				<h1><a href="index.html">Fadlurrohman</a></h1>
+				<nav id="nav">
+					<ul>
+						<li><a href="index.html" target="_blank">Home</a></li>
+						<li><a href="publications.html" class="button">Publications</a></li>
+						<li><a href="projects.html">Projects</a></li>
+						<li><a href="licences.html">Licences & Certifications</a></li>
+						<li><a href="photos.html">Photos</a></li>
+						<li><a href="activities.html">Activities</a></li>
+					</ul>
+				</nav>
+			</header>
+
+
+			<!-- Main -->
+			<section id="main" class="container publications-page">
+				<header>
+					<h2>Publications</h2>
+				</header>
+
+				<div class="row">
+					<div class="col-12">
+						<div id="filter-container">
+							<h3>Tags</h3>
+							<div class="filter-row">
+								<div id="filter-tags"></div>
+							</div>
+						</div>
+
+						<div class="publications-container">
+							<section class="publication-card box" data-tags="#Diffusion Models, #Attack">
+								<div class="publication-split">
+									<div class="publication-main">
+										<h4 class="publication-title">Balanced-MixUp on Manifold for Highly Imbalanced Breast Cancer Classification</h4>
+										<p class="publication-authors">
+											<b>Jia-Wei Liao</b>*,
+											<a href="https://www.csie.ntu.edu.tw/~ccf/">Farchan Hakim Raswa</a>,
+											Bach-Tung Pham*,
+											<a href="https://www.csie.ntu.edu.tw/~ccf/">Jia-Ching Wang</a>,
+										</p>
+										<p class="publication-venue">CVGIP 2025</p>
+										<div class="tags-container"></div>
+										<div class="button-container">
+											<li><a href="https://arxiv.org/abs/2512.22877" class="custom-button" target="_blank">Paper</a></li>
+											<li><a href="projects/wacv26_m-erasurebench/slides.pdf" class="custom-button" target="_blank">Slides</a></li>
+										</div>
+										<details class="publication-abs-collapsible">
+											<summary class="publication-abs-toggle">TL;DR</summary>
+											<p class="publication-abs">Breast cancer classification faces significant challenges due to the highly imbalanced nature of mammography datasets, where benign cases vastly outnumber malignant cases. This imbalance can lead deep learning models to become biased toward the majority class, limiting their effectiveness in detecting cancerous cases. To address this, we propose a novel multi-level augmentation framework called Balanced-MixUp on Manifold, which combines class-based and instance-based MixUp at the input level with latent space interpolation via Manifold Mixup. Balanced-MixUp generates synthetic samples with controlled α-hyperparameter using a Beta (α, 1) distribution to improve minority class representation, while Manifold Mixup interpolates features within hidden layers to encourage smoother decision boundaries. We evaluate our method on the EMBED C-view mammogram dataset using four architectures CNN: MobileNet-V2, VGG-19, DenseNet-121, and ResNeXt-50. Stratified 5-fold cross-validation is performed, and evaluation metrics include Matthews Correlation Coeﬀicient (MCC), Balanced Accuracy (B-ACC), and Macro-F1. Results demonstrate that our propose method significantly improves classification performance on underrepresented cancer cases.</p>
+										</details>
+									</div>
+									<div class="publication-media">
+										<div class="youtube-video">
+											<div class="videobox">
+												<iframe src="https://www.youtube.com/embed/iD2dgTkljjI?si=_13QIja-AzMr7FsL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+											</div>
+										</div>
+									</div>
+								</div>
+							</section>
+
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Footer -->
+			<footer id="footer">
+				<ul class="copyright">
+					<li>&copy; 2026 Fadlurrohman. All rights reserved.</li>
+				</ul>
+			</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+			<script>
+				document.querySelectorAll(".publication-card").forEach(box => {
+					const tagsContainer = box.querySelector(".tags-container");
+					const tags = box.getAttribute("data-tags").split(", ");
+					tags.forEach(tag => {
+						const span = document.createElement("span");
+						span.className = "tags";
+						span.textContent = tag;
+						tagsContainer.appendChild(span);
+					});
+				});
+
+				const uniqueTags = new Set();
+				document.querySelectorAll(".publication-card").forEach(box => {
+					const tags = box.getAttribute("data-tags").split(", ");
+					tags.forEach(tag => uniqueTags.add(tag));
+				});
+		
+				const filterTagsContainer = document.getElementById("filter-tags");
+				uniqueTags.forEach(tag => {
+					const tagButton = document.createElement("span");
+					tagButton.className = "filter-tags";
+					tagButton.textContent = tag.replace(/^#/, "");
+					tagButton.setAttribute("data-tag", tag);
+					filterTagsContainer.appendChild(tagButton);
+				});
+
+				const selectedTags = new Set();
+				document.addEventListener("click", function (e) {
+					if (e.target.classList.contains("filter-tags")) {
+						const tag = e.target.getAttribute("data-tag");
+
+						if (selectedTags.has(tag)) {
+							selectedTags.delete(tag);
+							e.target.classList.remove("selected");
+						} else {
+							selectedTags.add(tag);
+							e.target.classList.add("selected");
+						}
+						filterPublications();
+					}
+				});
+
+				function filterPublications() {
+					const publications = document.querySelectorAll(".publication-card");
+					publications.forEach(publication => {
+						const tags = publication.getAttribute("data-tags").split(", ");
+						if (selectedTags.size === 0) {
+							publication.style.display = "block";
+						} else {
+							const match = Array.from(selectedTags).some(tag => tags.includes(tag));
+							publication.style.display = match ? "block" : "none";
+						}
+					});
+				}
+			</script>
+	</body>
+</html>
