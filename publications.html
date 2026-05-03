@@ -42,53 +42,50 @@
 						</div>
 
 						<div class="publications-container">
-							<section class="publication-card box" data-tags="#Breast Cancer, #Highly Imbalanced, #C-View Mammogram, #Balanced-MixUp, #Manifold Mixup">
-								<div class="publication-split">
-									<div class="publication-main">
-										<h4 class="publication-title">Balanced-MixUp on Manifold for Highly Imbalanced Breast Cancer Classification</h4>
-										<p class="publication-authors">
-											<b>Muhammad Fadlurrohman</b>*,
-											<a href="https://scholar.google.com/citations?user=U5iQ4b0AAAAJ&hl=en">Farchan Hakim Raswa</a>,
-											<a href="https://scholar.google.com/citations?user=70pOiSEAAAAJ&hl=en">Bach-Tung Pham</a>,
-											<a href="https://scholars.ncu.edu.tw/en/persons/jia-ching-wang/">Jia-Ching Wang</a>
-										</p>
-										<p class="publication-venue">CVGIP 2025</p>
-										<div class="tags-container"></div>
-										<div class="button-container">
-											<li><a href="projects/CVGIP2025.pdf" class="custom-button" target="_blank">Slides</a></li>
-										</div>
-										<details class="publication-abs-collapsible">
-											<summary class="publication-abs-toggle">TL;DR</summary>
-											<p class="publication-abs">Breast cancer classification faces significant challenges due to the highly imbalanced nature of mammography datasets, where benign cases vastly outnumber malignant cases. This imbalance can lead deep learning models to become biased toward the majority class, limiting their effectiveness in detecting cancerous cases. To address this, we propose a novel multi-level augmentation framework called Balanced-MixUp on Manifold, which combines class-based and instance-based MixUp at the input level with latent space interpolation via Manifold Mixup. Balanced-MixUp generates synthetic samples with controlled α-hyperparameter using a Beta (α, 1) distribution to improve minority class representation, while Manifold Mixup interpolates features within hidden layers to encourage smoother decision boundaries. We evaluate our method on the EMBED C-view mammogram dataset using four architectures CNN: MobileNet-V2, VGG-19, DenseNet-121, and ResNeXt-50. Stratified 5-fold cross-validation is performed, and evaluation metrics include Matthews Correlation Coeﬀicient (MCC), Balanced Accuracy (B-ACC), and Macro-F1. Results demonstrate that our propose method significantly improves classification performance on underrepresented cancer cases.</p>
-										</details>
-									</div>
-									<div class="publication-main">
-										<h4 class="publication-title">Benign Share Benefit to Malignant: Balanced-Mixing on Feature-Space for Imbalanced Breast Cancer Classification</h4>
-										<p class="publication-authors">
-											<b>Muhammad Fadlurrohman</b>*,
-											<a href="https://scholar.google.com/citations?user=U5iQ4b0AAAAJ&hl=en">Farchan Hakim Raswa</a>,
-											<a href="https://scholar.google.com/citations?user=70pOiSEAAAAJ&hl=en">Bach-Tung Pham</a>,
-											<a href="https://scholar.google.com/citations?user=2VU-dUwAAAAJ&hl=en">Ika Candradewi</a>,
-											<a href="https://scholar.google.com/citations?user=GU_FTN0AAAAJ&hl=en">Afiahayati</a>,
-											<a>Ming-Hsing Su</a>,
-											<a>Chung-I Huang</a>,
-											<a href="https://el.cycu.edu.tw/en/portfolio-item/shih-lun-chen/">Shih-Lun Chen</a>,
-											<a href="https://hhri.foxconn.com/en/center/artificial-intelligence-research-center/members/8">Yung-Hui Li</a>,
-											<a href="https://scholars.ncu.edu.tw/en/persons/jia-ching-wang/">Jia-Ching Wang</a>
-										</p>
-										<p class="publication-venue">MDPI</p>
-										<div class="tags-container"></div>
-										<div class="button-container">
-											<li><a href="" class="custom-button" target="_blank">Paper</a></li>
-										</div>
-										<details class="publication-abs-collapsible">
-											<summary class="publication-abs-toggle">TL;DR</summary>
-											<p class="publication-abs">Breast cancer classification faces significant challenges due to the highly imbalanced nature of mammography datasets, where benign cases vastly outnumber malignant cases. This imbalance can lead deep learning models to become biased toward the majority class, limiting their effectiveness in detecting cancerous cases. To address this, we propose a novel multi-level augmentation framework called Balanced-MixUp on Manifold, which combines class-based and instance-based MixUp at the input level with latent space interpolation via Manifold Mixup. Balanced-MixUp generates synthetic samples with controlled α-hyperparameter using a Beta (α, 1) distribution to improve minority class representation, while Manifold Mixup interpolates features within hidden layers to encourage smoother decision boundaries. We evaluate our method on the EMBED C-view mammogram dataset using four architectures CNN: MobileNet-V2, VGG-19, DenseNet-121, and ResNeXt-50. Stratified 5-fold cross-validation is performed, and evaluation metrics include Matthews Correlation Coeﬀicient (MCC), Balanced Accuracy (B-ACC), and Macro-F1. Results demonstrate that our propose method significantly improves classification performance on underrepresented cancer cases.</p>
-										</details>
-									</div>
+							<section class="publication-card box" data-tags="#Breast Cancer, #Balanced-MixUp, #Manifold Mixup">
+								<h4 class="publication-title">Balanced-MixUp on Manifold for Highly Imbalanced Breast Cancer Classificatio</h4>
+								<p class="publication-authors">
+									<b>Muhammad Fadlurrohman</b>*,
+									<a href="https://scholar.google.com/citations?user=U5iQ4b0AAAAJ&hl=en">Farchan Hakim Raswa</a>,
+									<a href="https://scholar.google.com/citations?user=70pOiSEAAAAJ&hl=en">Bach-Tung Pham</a>,
+									<a href="https://scholars.ncu.edu.tw/en/persons/jia-ching-wang/">Jia-Ching Wang</a>
+								</p>
+								<p class="publication-venue">CVGIP2025</p>
+								<div class="tags-container"></div>
+								<div class="button-container">
+									<li><a href="projects/CVGIP2025.pdf" class="custom-button" target="_blank">Slides</a></li>
 								</div>
+								<details class="publication-abs-collapsible">
+									<summary class="publication-abs-toggle">TL;DR</summary>
+									<p class="publication-abs">Breast cancer classification faces significant challenges due to the highly imbalanced nature of mammography datasets, where benign cases vastly outnumber malignant cases. This imbalance can lead deep learning models to become biased toward the majority class, limiting their effectiveness in detecting cancerous cases. To address this, we propose a novel multi-level augmentation framework called Balanced-MixUp on Manifold, which combines class-based and instance-based MixUp at the input level with latent space interpolation via Manifold Mixup. Balanced-MixUp generates synthetic samples with controlled α-hyperparameter using a Beta (α, 1) distribution to improve minority class representation, while Manifold Mixup interpolates features within hidden layers to encourage smoother decision boundaries. We evaluate our method on the EMBED C-view mammogram dataset using four architectures CNN: MobileNet-V2, VGG-19, DenseNet-121, and ResNeXt-50. Stratified 5-fold cross-validation is performed, and evaluation metrics include Matthews Correlation Coeﬀicient (MCC), Balanced Accuracy (B-ACC), and Macro-F1. Results demonstrate that our propose method significantly improves classification performance on underrepresented cancer cases.</p>
+								</details>
 							</section>
 
+							<section class="publication-card box" data-tags="#Breast Cancer, #Balanced-MixUp, #Manifold Mixup">
+								<h4 class="publication-title">Balanced-MixUp on Manifold for Highly Imbalanced Breast Cancer Classificatio</h4>
+								<p class="publication-authors">
+									<b>Muhammad Fadlurrohman</b>*,
+									<a href="https://scholar.google.com/citations?user=U5iQ4b0AAAAJ&hl=en">Farchan Hakim Raswa</a>,
+									<a href="https://scholar.google.com/citations?user=70pOiSEAAAAJ&hl=en">Bach-Tung Pham</a>,
+									<a href="https://scholar.google.com/citations?user=2VU-dUwAAAAJ&hl=en">Ika Candradewi</a>,
+									<a href="https://scholar.google.com/citations?user=GU_FTN0AAAAJ&hl=en">Afiahayati</a>,
+									<a>Ming-Hsing Su</a>,
+									<a>Chung-I Huang</a>,
+									<a href="https://el.cycu.edu.tw/en/portfolio-item/shih-lun-chen/">Shih-Lun Chen</a>,
+									<a href="https://hhri.foxconn.com/en/center/artificial-intelligence-research-center/members/8">Yung-Hui Li</a>,
+									<a href="https://scholars.ncu.edu.tw/en/persons/jia-ching-wang/">Jia-Ching Wang</a>
+								</p>
+								<p class="publication-venue">MDPI20262025</p>
+								<div class="tags-container"></div>
+								<div class="button-container">
+									<li><a href="projects/" class="custom-button" target="_blank">Paper</a></li>
+								</div>
+								<details class="publication-abs-collapsible">
+									<summary class="publication-abs-toggle">TL;DR</summary>
+									<p class="publication-abs">Breast cancer classification faces significant challenges due to the highly imbalanced nature of mammography datasets, where benign cases vastly outnumber malignant cases. This imbalance can lead deep learning models to become biased toward the majority class, limiting their effectiveness in detecting cancerous cases. To address this, we propose a novel multi-level augmentation framework called Balanced-MixUp on Manifold, which combines class-based and instance-based MixUp at the input level with latent space interpolation via Manifold Mixup. Balanced-MixUp generates synthetic samples with controlled α-hyperparameter using a Beta (α, 1) distribution to improve minority class representation, while Manifold Mixup interpolates features within hidden layers to encourage smoother decision boundaries. We evaluate our method on the EMBED C-view mammogram dataset using four architectures CNN: MobileNet-V2, VGG-19, DenseNet-121, and ResNeXt-50. Stratified 5-fold cross-validation is performed, and evaluation metrics include Matthews Correlation Coeﬀicient (MCC), Balanced Accuracy (B-ACC), and Macro-F1. Results demonstrate that our propose method significantly improves classification performance on underrepresented cancer cases.</p>
+								</details>
+							</section>
+							
 						</div>
 					</div>
 				</div>
